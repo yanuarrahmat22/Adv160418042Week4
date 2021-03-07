@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.a160418042_advweek4.R
 import com.example.a160418042_advweek4.viewmodel.DetailViewModel
 import com.example.a160418042_advweek4.viewmodel.ListViewModel
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_student_detail.*
 import kotlinx.android.synthetic.main.fragment_student_list.*
 
@@ -30,10 +31,11 @@ class StudentDetailFragment : Fragment() {
 
     fun observeViewModel() {
         viewModel.studentLD.observe(viewLifecycleOwner, Observer {
+            Picasso.get().load(it.photoUrl).into(imageView2)
             txtID.setText(it.id)
             txtName.setText(it.name)
             txtBod.setText(it.bod)
-            txtPhone.setText(it.name)
+            txtPhone.setText(it.phone)
         })
     }
 

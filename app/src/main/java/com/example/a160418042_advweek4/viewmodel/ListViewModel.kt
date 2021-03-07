@@ -10,9 +10,9 @@ class ListViewModel:ViewModel() {
     val loadingDoneLD = MutableLiveData<Boolean>()
 
     fun refresh() {
-        val student1 = Student("16055","Nonie","1998/03/28","5718444778","http://dummyimage.com/75x100.jpg/cc0000/ffffff")
-        val student2 = Student("13312","Rich","1994/12/14","3925444073","http://dummyimage.com/75x100.jpg/5fa2dd/ffffff")
-        val student3 = Student("11204","Dinny","1994/10/07","6827808747","http://dummyimage.com/75x100.jpg/5fa2dd/ffffff1")
+        val student1 = Student("16055","Nonie","1998/03/28","5718444778","https://st2.depositphotos.com/1006318/5909/v/600/depositphotos_59095493-stock-illustration-profile-icon-male-avatar.jpg")
+        val student2 = Student("13312","Rich","1994/12/14","3925444073","https://st2.depositphotos.com/1006318/5909/v/600/depositphotos_59095493-stock-illustration-profile-icon-male-avatar.jpg")
+        val student3 = Student("11204","Dinny","1994/10/07","6827808747","https://st2.depositphotos.com/1006318/5909/v/600/depositphotos_59095493-stock-illustration-profile-icon-male-avatar.jpg")
 
         val studentList:ArrayList<Student> = arrayListOf<Student>(student1, student2, student3)
         studentsLD.value = studentList

@@ -7,6 +7,8 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.a160418042_advweek4.R
 import com.example.a160418042_advweek4.model.Student
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.fragment_student_detail.*
 import kotlinx.android.synthetic.main.student_list_item.view.*
 
 class StudentListAdapter(val studenList:ArrayList<Student>)
@@ -32,6 +34,7 @@ class StudentListAdapter(val studenList:ArrayList<Student>)
     }
 
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
+        Picasso.get().load(studenList[position].photoUrl).into(holder.view.imageView)
         holder.view.txtID.text = studenList[position].id
         holder.view.txtName.text = studenList[position].name
     }

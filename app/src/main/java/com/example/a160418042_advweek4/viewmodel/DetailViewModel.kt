@@ -8,7 +8,7 @@ class DetailViewModel: ViewModel() {
     val studentLD = MutableLiveData<Student>()
 
     fun fetch() {
-        val student1 = Student("16055","Nonie","1998/03/28","5718444778","http://dummyimage.com/75x100.jpg/cc0000/ffffff")
+        val student1 = Student("16055","Nonie","1998/03/28","5718444778","https://st2.depositphotos.com/1006318/5909/v/600/depositphotos_59095493-stock-illustration-profile-icon-male-avatar.jpg")
         studentLD.value = student1
     }
 }
