@@ -9,11 +9,13 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.a160418042_advweek4.R
+import com.example.a160418042_advweek4.util.loadImage
 import com.example.a160418042_advweek4.viewmodel.DetailViewModel
 import com.example.a160418042_advweek4.viewmodel.ListViewModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_student_detail.*
 import kotlinx.android.synthetic.main.fragment_student_list.*
+import kotlinx.android.synthetic.main.student_list_item.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,7 +33,7 @@ class StudentDetailFragment : Fragment() {
 
     fun observeViewModel() {
         viewModel.studentLD.observe(viewLifecycleOwner, Observer {
-            Picasso.get().load(it.photoUrl).into(imageView2)
+            imageView2.loadImage(it.photoUrl,progressBar2)
             txtID.setText(it.id)
             txtName.setText(it.name)
             txtBod.setText(it.bod)
@@ -49,9 +51,14 @@ class StudentDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var student_id = ""
+        arguments?.let {
+                student_id = StudentDetailFragmentArgs.fromBundle(requireArguments()).studentId
+            //txtTurn.text = "Your score is $playerScore"
+        }
 
         viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
-        viewModel.fetch()
+        viewModel.fetch(student_id)
 
         observeViewModel()
     }
