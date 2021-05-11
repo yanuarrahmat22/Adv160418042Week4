@@ -28,8 +28,8 @@ fun ImageView.loadImage(url: String?, progressBar: ProgressBar) {
 }
 
 @BindingAdapter("android:imageUrl","android:progressBar")
-fun loadPhotoURL(view:ImageView, url:String, pb:ProgressBar){
-    view.loadImage(url,pb)
+fun loadPhotoURL(view:ImageView?, url:String?, pb:ProgressBar?){
+    pb?.let { view?.loadImage(url.toString(),it) }
 }
 
 fun createNotificationChannel(context: Context, importance: Int, showBadge:

@@ -43,7 +43,7 @@ class StudentDetailFragment : Fragment(), ButtonSaveChangesClicklistener, Button
     fun observeViewModel() {
         viewModel.studentLD.observe(viewLifecycleOwner, Observer {
             dataBinding.student = it
-            imageView.loadImage(it.photoUrl,progressBar)
+//            imageView.loadImage(it.photoUrl,progressBar)
 //            txtID.setText(it.id)
 //            txtName.setText(it.name)
 //            txtBod.setText(it.bod)
